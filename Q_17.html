@@ -1,1 +1,56 @@
 <!-- Create a simple multiplication table asking the user the number of rows and columns he wants. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Table</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h2>Multiplication Table</h2>
+
+<div>
+  <label for="rows">Number of Rows:</label>
+  <input type="number" id="rows" min="1" value="5">
+</div>
+<div>
+  <label for="columns">Number of Columns:</label>
+  <input type="number" id="columns" min="1" value="5">
+</div>
+<button onclick="generateTable()">Generate Table</button>
+
+<div id="tableContainer"></div>
+
+<script>
+function generateTable() {
+  var rows = parseInt(document.getElementById('rows').value);
+  var columns = parseInt(document.getElementById('columns').value);
+  
+  var table = '<table>';
+  for (var i = 1; i <= rows; i++) {
+    table += '<tr>';
+    for (var j = 1; j <= columns; j++) {
+      table += '<td>' + (i * j) + '</td>';
+    }
+    table += '</tr>';
+  }
+  table += '</table>';
+  
+  document.getElementById('tableContainer').innerHTML = table;
+}
+</script>
+
+</body>
+</html>

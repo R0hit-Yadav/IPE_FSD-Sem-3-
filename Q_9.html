@@ -6,3 +6,165 @@ and user switches to other fields. Apply following validations:
 • Password and confirm password must match. 
 • Keep one checkbox having option “All”. If user selects this checkbox, then all remaining checkboxes should be checked. 
 If any of the remaining checkbox deselects, then “All” should also get deselected. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup Form</title>
+<style>
+  /* Basic styling for the form */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  select:focus {
+    border-color: dodgerblue;
+  }
+  .form-check-input {
+    margin-right: 5px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #007bff;
+  }
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Signup Form</h2>
+  <form id="signupForm">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="hobbies">Hobbies:</label><br>
+      <input type="checkbox" id="selectAll" name="selectAll"> <label for="selectAll">Select All</label><br>
+      <input type="checkbox" id="sports1" name="hobbies" value="Sports 1"> <label for="sports1">Sports 1</label><br>
+      <input type="checkbox" id="sports2" name="hobbies" value="Sports 2"> <label for="sports2">Sports 2</label><br>
+      <!-- Add more hobbies as needed -->
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <textarea id="address" name="address"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state">
+    </div>
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country">
+    </div>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Validation for username
+  var usernameInput = document.getElementById("username");
+  usernameInput.addEventListener("input", function() {
+    var usernameRegex = /^[a-zA-Z0-9]+$/;
+    if (!usernameRegex.test(this.value)) {
+      this.setCustomValidity("Username should only contain alphanumeric characters.");
+    } else {
+      this.setCustomValidity("");
+    }
+  });
+
+  // Validation for password match
+  var passwordInput = document.getElementById("password");
+  var confirmPasswordInput = document.getElementById("confirmPassword");
+  confirmPasswordInput.addEventListener("input", function() {
+    if (passwordInput.value !== confirmPasswordInput.value) {
+      this.setCustomValidity("Passwords do not match.");
+    } else {
+      this.setCustomValidity("");
+    }
+  });
+
+  // Checkbox "Select All" functionality
+  var selectAllCheckbox = document.getElementById("selectAll");
+  selectAllCheckbox.addEventListener("change", function() {
+    var checkboxes = document.querySelectorAll('input[name="hobbies"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = selectAllCheckbox.checked;
+    });
+  });
+
+  var hobbyCheckboxes = document.querySelectorAll('input[name="hobbies"]');
+  hobbyCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+      if (!this.checked) {
+        selectAllCheckbox.checked = false;
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>

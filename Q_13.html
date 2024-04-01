@@ -3,3 +3,224 @@
 2. The website should have a menu page that displays the business's menu, including the item names, descriptions, and prices. 
 3. The website should have an about page that provides information about the business, such as its history, mission, and team members. 
 4. The website should have a contact page that includes a contact form, business hours, phone number, email address, and physical address. -->
+
+<!-- ==================home page  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Local Business</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Business Name</h1>
+      <img src="logo.png" alt="Business Logo">
+      <p>Tagline</p>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- Home page content -->
+    <section>
+      <h2>Welcome to Our Business</h2>
+      <p>This is the home page content.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Business Name. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<!--=========== menu page  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Local Business</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Same header content as index.html -->
+  </header>
+  <main>
+    <!-- Menu page content -->
+    <section>
+      <h2>Menu</h2>
+      <div class="menu-item">
+        <h3>Item Name</h3>
+        <p>Description of the item.</p>
+        <p>Price: $X.XX</p>
+      </div>
+      <!-- Add more menu items as needed -->
+    </section>
+  </main>
+  <footer>
+    <!-- Same footer content as index.html -->
+  </footer>
+</body>
+</html>
+
+<!-- ===========================about page  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Local Business</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Same header content as index.html -->
+  </header>
+  <main>
+    <!-- About page content -->
+    <section>
+      <h2>About Us</h2>
+      <p>Information about the business.</p>
+    </section>
+  </main>
+  <footer>
+    <!-- Same footer content as index.html -->
+  </footer>
+</body>
+</html>
+
+
+<!-- =============================content page  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Local Business</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Same header content as index.html -->
+  </header>
+  <main>
+    <!-- Contact page content -->
+    <section>
+      <h2>Contact Us</h2>
+      <p>Business hours: Monday - Friday, 9:00 AM - 5:00 PM</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Email: info@example.com</p>
+      <p>Address: 123 Main Street, City, State, Zip Code</p>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <!-- Same footer content as index.html -->
+  </footer>
+</body>
+</html>
+
+
+<style>
+    /* Add your CSS styles here */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+main {
+  padding: 20px 0;
+}
+
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.menu-item {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+
+

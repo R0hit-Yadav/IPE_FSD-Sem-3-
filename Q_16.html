@@ -4,3 +4,204 @@
 3. Combined image of subject1, subject2 and subject3. After clicking individual subject it should open different picture of book of perticular subject
 4. A form to collect feedback from student or page visitors such as name, comments and radion button to choose experience from following options - 
 Very Bad, Good, Very Good, Excellent 5. Try to make your page attractive -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational Institute</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+/* Logo styles */
+header {
+  background-color: #f0f0f0;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Timetable styles */
+.timetable table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.timetable th, .timetable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Subject images styles */
+.subject-images {
+  background-color: #f9f9f9;
+  padding: 20px 0;
+}
+
+.subject-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.subject-container img {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.subject-container img:hover {
+  transform: scale(1.1);
+}
+
+/* Feedback form styles */
+.feedback-form {
+  padding: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Logo using SVG and Canvas with Heading -->
+<header>
+  <div class="container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="12" fill="blue"/>
+    </svg>
+    <canvas id="logoCanvas" width="100" height="100"></canvas>
+    <h1>Welcome to Our Educational Institute</h1>
+  </div>
+</header>
+
+<!-- Timetable -->
+<section class="timetable">
+  <div class="container">
+    <h2>Weekly Timetable</h2>
+    <table>
+      <tr>
+        <th>Day/Time</th>
+        <th>1:00 PM</th>
+        <th>2:00 PM</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td>Subject 1</td>
+        <td>Subject 2</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Subject 3</td>
+        <td>Subject 1</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Subject 2</td>
+        <td>Subject 3</td>
+      </tr>
+      <!-- Add more rows for other days -->
+    </table>
+  </div>
+</section>
+
+<!-- Combined image of subjects with clickable links -->
+<section class="subject-images">
+  <div class="container">
+    <h2>Subjects</h2>
+    <div class="subject-container">
+      <a href="subject1-book.jpg"><img src="subject1.jpg" alt="Subject 1"></a>
+      <a href="subject2-book.jpg"><img src="subject2.jpg" alt="Subject 2"></a>
+      <a href="subject3-book.jpg"><img src="subject3.jpg" alt="Subject 3"></a>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback Form -->
+<section class="feedback-form">
+  <div class="container">
+    <h2>Feedback Form</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Experience:</label><br>
+        <input type="radio" id="very-bad" name="experience" value="Very Bad">
+        <label for="very-bad">Very Bad</label><br>
+        <input type="radio" id="good" name="experience" value="Good">
+        <label for="good">Good</label><br>
+        <input type="radio" id="very-good" name="experience" value="Very Good">
+        <label for="very-good">Very Good</label><br>
+        <input type="radio" id="excellent" name="experience" value="Excellent">
+        <label for="excellent">Excellent</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<script>
+// Code for drawing logo on canvas
+var canvas = document.getElementById('logoCanvas');
+var ctx = canvas.getContext('2d');
+ctx.fillStyle = 'red';
+ctx.fillRect(10, 10, 80, 80);
+</script>
+
+</body>
+</html>
+
+

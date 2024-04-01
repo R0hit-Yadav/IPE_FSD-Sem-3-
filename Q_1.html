@@ -1,1 +1,48 @@
 <!-- USING SVG MAKE ABOVE IMAGE AN ADD MOVING EFFECT LEFT-RIGHT-BOTTOM-TOP  -->
+<html>
+    <meta name="viewport" content="width='device-width' initial-scale=0.0"/>
+    <head>
+        <style>
+            #p1{
+                animation-name:abc;
+                animation-duration:5s;
+                animation-delay:5s;
+                animation-iteration-count:infinite;
+                animation-direction: alternate;
+                position:relative;
+            }
+            @keyframes abc {
+                
+                0%{
+                    left: 0px;
+                    
+                }
+                100%{
+                    left:1000px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <svg height="250" width="1350" id="p1">
+            <rect height="95" width="250" x="100" y="100" 
+            stroke="blue" stroke-width="3" 
+            style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+            
+            <rect height="50" width="160" x="100" y="50" 
+            style="fill:rgb(255, 0, 0);stroke-width:3;stroke:rgb(0,0,0)"/>
+            
+            <circle cx="145" cy="200" r="35" stroke-width="3" stroke="3"
+            style="fill:rgb(255, 0, 0);stroke-width:3;stroke:rgb(0,0,0)"/>
+            
+            <circle cx="145" cy="200" r="10" stroke-width="3" stroke="3"
+            style="fill:rgb(0, 0, 255);stroke-width:3;stroke:rgb(0,0,0)"/>
+            
+            <circle cx="285" cy="200" r="35" stroke-width="3" stroke="3"
+            style="fill:rgb(255, 0, 0);stroke-width:3;stroke:rgb(0,0,0)"/>
+            
+            <circle cx="285" cy="200" r="10" stroke-width="3" stroke="3"
+            style="fill:rgb(0, 0, 255);stroke-width:3;stroke:rgb(0,0,0)"/>
+        </svg>
+    </body>
+</html>

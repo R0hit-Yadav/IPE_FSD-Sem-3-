@@ -2,3 +2,50 @@
 ·         Make arrow function to merge both arrays in 3rd array.
 ·         Find second maximum from both arrays without sorting. 
 ·         Find summation of both individual arrays. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Operations</title>
+</head>
+<body>
+<script>
+// Define two arrays
+const array1 = [5, 10, 15, 20, 25];
+const array2 = [30, 35, 40, 45, 50];
+
+// Arrow function to merge both arrays into a third array
+const mergeArrays = (arr1, arr2) => [...arr1, ...arr2];
+
+// Function to find second maximum from both arrays without sorting
+const findSecondMax = (arr1, arr2) => {
+  const allValues = [...arr1, ...arr2];
+  const max = Math.max(...allValues);
+  const index = allValues.indexOf(max);
+  allValues.splice(index, 1);
+  return Math.max(...allValues);
+};
+
+// Function to find summation of both individual arrays
+const findSummation = (arr1, arr2) => {
+  const sum1 = arr1.reduce((acc, curr) => acc + curr, 0);
+  const sum2 = arr2.reduce((acc, curr) => acc + curr, 0);
+  return sum1 + sum2;
+};
+
+// Merge arrays
+const mergedArray = mergeArrays(array1, array2);
+console.log("Merged Array:", mergedArray);
+
+// Find second maximum
+const secondMax = findSecondMax(array1, array2);
+console.log("Second Maximum:", secondMax);
+
+// Find summation
+const summation = findSummation(array1, array2);
+console.log("Summation:", summation);
+</script>
+</body>
+</html>

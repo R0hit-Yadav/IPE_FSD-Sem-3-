@@ -4,3 +4,129 @@
 3. The website should have a section that lists the services offered by the business, with an image and a brief description for each service. 
 4. The website should have a section that displays customer testimonials, with a photo and a quote for each testimonial. 
 5. The website should be fully responsive, with a layout that adjusts to different screen sizes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Small Business Website</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* Fixed navigation bar */
+    .navbar.fixed-top {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    /* Hero section */
+    .hero-section {
+      background-image: url('hero-background.jpg'); /* Replace with your image */
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 0;
+    }
+    /* Services section */
+    .services-section {
+      padding: 50px 0;
+    }
+    .service {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    /* Testimonials section */
+    .testimonials-section {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
+    .testimonial {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Small Business</a>
+    <!-- Add your navigation links here -->
+  </div>
+</nav>
+
+<!-- Hero section -->
+<section class="hero-section">
+  <div class="container">
+    <h1>Welcome to Our Business</h1>
+    <!-- Add more content as needed -->
+  </div>
+</section>
+
+<!-- Services section -->
+<section class="services-section">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="service">
+          <img src="service1.jpg" alt="Service 1" class="img-fluid">
+          <h3>Service 1</h3>
+          <p>Description of service 1</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service">
+          <img src="service2.jpg" alt="Service 2" class="img-fluid">
+          <h3>Service 2</h3>
+          <p>Description of service 2</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service">
+          <img src="service3.jpg" alt="Service 3" class="img-fluid">
+          <h3>Service 3</h3>
+          <p>Description of service 3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials section -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2>Customer Testimonials</h2>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="testimonial">
+          <img src="customer1.jpg" alt="Customer 1" class="img-fluid rounded-circle">
+          <blockquote>Customer 1 quote</blockquote>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="testimonial">
+          <img src="customer2.jpg" alt="Customer 2" class="img-fluid rounded-circle">
+          <blockquote>Customer 2 quote</blockquote>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="testimonial">
+          <img src="customer3.jpg" alt="Customer 3" class="img-fluid rounded-circle">
+          <blockquote>Customer 3 quote</blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

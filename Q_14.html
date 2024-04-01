@@ -5,3 +5,131 @@ Your application should meet the following requirements:
 3. The application should display an error message if any input field is empty or invalid.
 4. Username length must be of 8 characters. 
 5. The application should use regular expressions to validate the email and phone number fields. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+  /* Basic styling for the form and error messages */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<form id="examForm">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <div id="nameError" class="error"></div>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <div id="emailError" class="error"></div>
+  </div>
+  <div>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+    <div id="phoneError" class="error"></div>
+  </div>
+  <div>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <div id="messageError" class="error"></div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById('examForm').addEventListener('submit', function(event) {
+  // Prevent the form from submitting
+  event.preventDefault();
+  
+  // Clear previous error messages
+  clearErrors();
+  
+  // Get form inputs
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+  
+  // Validate inputs
+  let valid = true;
+  if (name.length !== 8) {
+    showError('nameError', 'Username must be 8 characters long.');
+    valid = false;
+  }
+  if (!isValidEmail(email)) {
+    showError('emailError', 'Invalid email address.');
+    valid = false;
+  }
+  if (!isValidPhoneNumber(phone)) {
+    showError('phoneError', 'Invalid phone number.');
+    valid = false;
+  }
+  if (message.trim() === '') {
+    showError('messageError', 'Message is required.');
+    valid = false;
+  }
+  
+  // If all inputs are valid, submit the form
+  if (valid) {
+    alert('Form submitted successfully!');
+    // You can also submit the form to a server using AJAX here
+  }
+});
+
+// Function to clear error messages
+function clearErrors() {
+  const errors = document.querySelectorAll('.error');
+  errors.forEach(function(error) {
+    error.textContent = '';
+  });
+}
+
+// Function to display error messages
+function showError(id, message) {
+  const errorElement = document.getElementById(id);
+  errorElement.textContent = message;
+}
+
+// Function to validate email using regular expression
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+// Function to validate phone number using regular expression
+function isValidPhoneNumber(phone) {
+  const phoneRegex = /^\d{10}$/;
+  return phoneRegex.test(phone);
+}
+</script>
+
+</body>
+</html>

@@ -1,3 +1,62 @@
 <!-- Write an ES6 script to maintain one stack having 10 elements. Provide push/pop functionalities. 
 It should prompt to user to enter the element for push operations. If user wants to push more than 10 elements, 
 then underflow message should be given in alert box. Popped values should be displayed on console. Show entire stack after performing both operations. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stack Operations</title>
+</head>
+<body>
+<script>
+class Stack {
+  constructor() {
+    this.elements = [];
+    this.maxSize = 10;
+  }
+
+  push(element) {
+    if (this.elements.length < this.maxSize) {
+      this.elements.push(element);
+    } else {
+      alert("Stack overflow! Maximum capacity reached.");
+    }
+  }
+
+  pop() {
+    if (this.elements.length === 0) {
+      console.log("Stack underflow! No elements to pop.");
+    } else {
+      return this.elements.pop();
+    }
+  }
+
+  display() {
+    console.log("Current Stack:");
+    console.log(this.elements.join(', '));
+  }
+}
+
+const stack = new Stack();
+
+// Prompt user to enter elements for push operation
+for (let i = 0; i < 10; i++) {
+  let element = prompt("Enter element to push (or click Cancel to stop):");
+  if (element === null) break;
+  stack.push(element);
+}
+
+// Display popped values and entire stack
+console.log("Popped Values:");
+for (let i = 0; i < 10; i++) {
+  let popped = stack.pop();
+  if (popped !== undefined) {
+    console.log(popped);
+  }
+}
+stack.display();
+</script>
+</body>
+</html>

@@ -1,2 +1,81 @@
 <!-- Make a table using html tags and make a first row while hovering red in color and 4th and 5th row should have while hovring cyan color and 
     when we click on text then text should turn blue in color make a table responsive. Use appropriate selectors. -->
+    <html>
+    <meta name="viewport" content="width='device-width' initial-scale=0.0"/>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <head></head>
+    <style>
+        .table tr:nth-child(4):hover,.table tr:nth-child(5):hover
+        {
+            background-color: cyan;
+        }
+        .table tr:nth-child(1):hover 
+        {
+            background-color: red;
+        }
+        .table td:active
+        {
+            background-color:blue;
+        }
+    </style>
+    <body>
+        <table class="table table-bordered table-hover table-sm">
+            <tr>
+                <td colspan="3" class="a1">Invoice #123456789</td>
+                <td class="a1">14 January 2025</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Pay to: <br/>Acme Biling Co.
+                    <br/> 
+                    123 Main st.
+                    Cityville,Na 12345
+                </td>
+                <td colspan="2">
+                    Customer: <br/>
+                    Jhon smith <br/>
+                    321 Willow way <br/>
+                    southeast northwestershire , MA 54321
+                </td>
+            </tr>
+            <tr>
+                <td class="a1">Name/description</td>
+                <td class="a1">qty</td>
+                <td class="a1">@</td>
+                <td class="a1">Cost</td>
+            </tr>
+            <tr>
+                <td>Paperclips</td>
+                <td>1000</td>
+                <td>0.01</td>
+                <td>10.00</td>
+            </tr>
+            <tr>
+                <td>Staples(box)</td>
+                <td>100</td>
+                <td>1.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="a1">
+                    Subtotal
+                </td>
+                <td>
+                    110.00
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="a1">Tax</td>
+                <td>8%</td>
+                <td>8.80</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="a1">Grand-total</td>
+                <td>$ 118.80</td>
+            </tr>
+        </table>
+    </body>
+</html>

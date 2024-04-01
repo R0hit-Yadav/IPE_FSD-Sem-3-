@@ -1,3 +1,128 @@
 <!-- Using html and js  make a registration form the fields like firstname,lastname,date of birth,mobile number,gender, address, city, pincode, 
 email id state,country,hobbies, make a qualification table which required filed like sr_no,board,percentage, passing year and last is which course 
 you can applied and make 2 button submit and reset. use validation for firstname and lastname should max 20 letters, and also add email validation using RE. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    .error 
+    {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="registrationForm" onsubmit="return validateForm()">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" maxlength="20"><span id="firstNameError" class="error"></span><br><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" maxlength="20"><span id="lastNameError" class="error"></span><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br><br>
+
+    <label for="mobile">Mobile Number:</label>
+    <input type="text" id="mobile" name="mobile"><br><br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select><br><br>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address"></textarea><br><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city"><br><br>
+
+    <label for="pincode">Pincode:</label>
+    <input type="text" id="pincode" name="pincode"><br><br>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email"><span id="emailError" class="error"></span><br><br>
+
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state"><br><br>
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country"><br><br>
+
+    <label for="hobbies">Hobbies:</label>
+    <input type="text" id="hobbies" name="hobbies"><br><br>
+
+    <h3>Qualification</h3>
+    <table id="qualificationTable">
+      <thead>
+        <tr>
+          <th>SR No.</th>
+          <th>Board</th>
+          <th>Percentage</th>
+          <th>Passing Year</th>
+          <th>Course Applied</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="srNo"></td>
+          <td><input type="text" name="board"></td>
+          <td><input type="text" name="percentage"></td>
+          <td><input type="text" name="passingYear"></td>
+          <td><input type="text" name="courseApplied"></td>
+        </tr>
+      </tbody>
+    </table><br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+
+  <script>
+    function validateForm() {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var email = document.getElementById("email").value;
+
+      var firstNameError = document.getElementById("firstNameError");
+      var lastNameError = document.getElementById("lastNameError");
+      var emailError = document.getElementById("emailError");
+
+      var isValid = true;
+
+      // Validate First Name
+      if (firstName.length > 20) {
+        firstNameError.textContent = "First Name should be less than 20 characters";
+        isValid = false;
+      } else {
+        firstNameError.textContent = "";
+      }
+
+      // Validate Last Name
+      if (lastName.length > 20) {
+        lastNameError.textContent = "Last Name should be less than 20 characters";
+        isValid = false;
+      } else {
+        lastNameError.textContent = "";
+      }
+
+      // Validate Email
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.match(emailPattern)) {
+        emailError.textContent = "Invalid Email";
+        isValid = false;
+      } else {
+        emailError.textContent = "";
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>
