@@ -3,3 +3,64 @@ element which is in shape of ball.when the animation is 25% complete  it will gr
 when 50% complete it will gradually change the background-color from "yellow" to "green" .,when 75% complete it will gradually change the background-color 
 from "green" to "blue". and again when the animation is 100% complete it turns back to red color also has a 2 seconds delay before starting the animation. 
 ball should change its position in ZIGZAG pattern -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zigzag Ball Animation</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+
+  .ball 
+  {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    animation: zigzag 5s infinite ease-in-out;
+  }
+
+  @keyframes zigzag 
+  {
+    0%, 100% {
+      background-color: red;
+      top: 50%;
+      left: 0;
+    }
+    25% {
+      background-color: yellow;
+      top: 25%;
+      left: 25%;
+    }
+    50% {
+      background-color: green;
+      top: 50%;
+      left: 50%;
+    }
+    75% {
+      background-color: blue;
+      top: 75%;
+      left: 75%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="ball"></div>
+
+</body>
+</html>

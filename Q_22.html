@@ -6,3 +6,173 @@ second of loading page.
 • For collapse, design a page of E-newspaper having 3 articles by showing only titles initially. Script should enable reader to open a particular article by 
 viewing and clicking its title and close it by clicking it again. If reader opens any other article, then previous article should disappear.
 •    For gradients, clicking on each gradient effect demonstrate particular effect on entire web page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Website</title>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<style>
+    /* General styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Hide content initially */
+.hide {
+  display: none;
+}
+
+/* Animation styling */
+#animation h1 {
+  color: blue;
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Carousel styling */
+/* Add carousel styling here */
+
+/* Collapse - E-Newspaper styling */
+.article {
+  display: none;
+}
+
+/* Gradients styling */
+.gradient-buttons {
+  margin-top: 20px;
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 600px) {
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+</style>
+
+<script>
+    // Animation Example
+function showAnimation() {
+  document.getElementById('animation').classList.remove('hide');
+}
+
+// Carousel Example
+function showCarousel() {
+  document.getElementById('carousel').classList.remove('hide');
+  // Add carousel functionality here
+}
+
+// Collapse - E-Newspaper Example
+function toggleArticle(articleNumber) {
+  var article = document.getElementById('article' + articleNumber);
+  var otherArticles = document.querySelectorAll('.article:not(#article' + articleNumber + ')');
+  if (article.style.display === 'none') {
+    article.style.display = 'block';
+    otherArticles.forEach(function(otherArticle) {
+      otherArticle.style.display = 'none';
+    });
+  } else {
+    article.style.display = 'none';
+  }
+}
+
+// Gradients Example
+function showGradient(type) {
+  document.getElementById('gradients').classList.remove('hide');
+  // Add gradient functionality here
+}
+
+function applyGradient(type) {
+  // Apply gradient effect based on type
+}
+
+</script>
+<body>
+
+<!-- Navigation Links -->
+<nav>
+  <ul>
+    <li><a href="#" onclick="showAnimation()">Animation</a></li>
+    <li><a href="#" onclick="showCarousel()">Carousel</a></li>
+    <li><a href="#" onclick="showCollapse()">Collapse</a></li>
+    <li><a href="#" onclick="showGradient('linear')">Linear Gradient</a></li>
+    <li><a href="#" onclick="showGradient('radial')">Radial Gradient</a></li>
+    <li><a href="#" onclick="showGradient('conic')">Conic Gradient</a></li>
+  </ul>
+</nav>
+
+<!-- Animation Banner -->
+<section id="animation" class="hide">
+  <h1>Animation Example</h1>
+</section>
+
+<!-- Carousel -->
+<section id="carousel" class="hide">
+  <h1>Carousel Example</h1>
+  <!-- Add carousel content here -->
+</section>
+
+<!-- Collapse - E-Newspaper -->
+<section id="collapse" class="hide">
+  <h1>E-Newspaper</h1>
+  <!-- Add collapse content here -->
+  <div id="articles">
+    <h2 onclick="toggleArticle(1)">Article 1</h2>
+    <div id="article1" class="article">
+      <p>Article 1 Content...</p>
+    </div>
+    <h2 onclick="toggleArticle(2)">Article 2</h2>
+    <div id="article2" class="article">
+      <p>Article 2 Content...</p>
+    </div>
+    <h2 onclick="toggleArticle(3)">Article 3</h2>
+    <div id="article3" class="article">
+      <p>Article 3 Content...</p>
+    </div>
+  </div>
+</section>
+
+<!-- Gradients -->
+<section id="gradients" class="hide">
+  <h1>Gradients Example</h1>
+  <!-- Add gradient content here -->
+  <div class="gradient-buttons">
+    <button onclick="applyGradient('linear')">Linear Gradient</button>
+    <button onclick="applyGradient('radial')">Radial Gradient</button>
+    <button onclick="applyGradient('conic')">Conic Gradient</button>
+  </div>
+</section>
+
+</body>
+</html>

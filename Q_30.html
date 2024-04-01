@@ -1,3 +1,104 @@
 <!-- Write javascript code 
 1) to check weather number is pelindrom or not and prime or not. take the input from user.
  2) create a calculator in which when you click on  "+" button then it will give sum of numbers.same for multiplication , subtraction and division. -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Calculator</title>
+ </head>
+ <body>
+   <input type="text" id="num1">
+   <input type="text" id="num2">
+   <button onclick="add()">+</button>
+   <button onclick="subtract()">-</button>
+   <button onclick="multiply()">*</button>
+   <button onclick="divide()">/</button>
+   <p id="result"></p>
+ 
+ <script>
+   function add() {
+     const num1 = parseFloat(document.getElementById('num1').value);
+     const num2 = parseFloat(document.getElementById('num2').value);
+     const result = num1 + num2;
+     document.getElementById('result').innerHTML = "Result: " + result;
+   }
+ 
+   function subtract() {
+     const num1 = parseFloat(document.getElementById('num1').value);
+     const num2 = parseFloat(document.getElementById('num2').value);
+     const result = num1 - num2;
+     document.getElementById('result').innerHTML = "Result: " + result;
+   }
+ 
+   function multiply() {
+     const num1 = parseFloat(document.getElementById('num1').value);
+     const num2 = parseFloat(document.getElementById('num2').value);
+     const result = num1 * num2;
+     document.getElementById('result').innerHTML = "Result: " + result;
+   }
+ 
+   function divide() {
+     const num1 = parseFloat(document.getElementById('num1').value);
+     const num2 = parseFloat(document.getElementById('num2').value);
+     if (num2 === 0) {
+       document.getElementById('result').innerHTML = "Cannot divide by zero";
+     } else {
+       const result = num1 / num2;
+       document.getElementById('result').innerHTML = "Result: " + result;
+     }
+   }
+ </script>
+
+ <script>
+    // Function to check if a number is palindrome
+function isPalindrome(number) {
+    const originalNumber = number;
+    let reversedNumber = 0;
+    
+    while (number > 0) {
+        const digit = number % 10;
+        reversedNumber = reversedNumber * 10 + digit;
+        number = Math.floor(number / 10);
+    }
+    
+    return originalNumber === reversedNumber;
+}
+
+// Function to check if a number is prime
+function isPrime(number) {
+    if (number <= 1) {
+        return false;
+    }
+    
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+// Take input from user
+const userInput = parseInt(prompt("Enter a number:"));
+
+// Check if the number is palindrome and prime
+if (isPalindrome(userInput)) {
+    console.log(userInput + " is a palindrome.");
+} else {
+    console.log(userInput + " is not a palindrome.");
+}
+
+if (isPrime(userInput)) {
+    console.log(userInput + " is a prime number.");
+} else {
+    console.log(userInput + " is not a prime number.");
+}
+
+ </script>
+ </body>
+ </html>
+ 

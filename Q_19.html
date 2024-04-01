@@ -4,3 +4,111 @@ In third section play a YouTube video looping forever
 2 All these three div should horizontally adjecent to each other. Make page responsive
 3 Initially first div should have red ,second div should have green and third div should have blue background color.when page turns to portrait mode first div should have blue ,second div should have red and third div should have green 
 background color -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizontal Sections</title>
+<style>
+  /* General styling */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Horizontal layout */
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* Individual section styling */
+  .section {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  /* Rainbow effect */
+  .rainbow {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  }
+
+  /* Image styling */
+  .image-container {
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  /* Video styling */
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Responsive layout */
+  @media only screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .section {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- First Section with Rainbow Effect -->
+  <div class="section rainbow">
+    <h2>First Section</h2>
+    <!-- Add rainbow effect content here -->
+  </div>
+
+  <!-- Second Section with Image -->
+  <div class="section" style="background-color: green;">
+    <h2>Second Section</h2>
+    <div class="image-container">
+      <img src="image.jpg" alt="Image">
+    </div>
+  </div>
+
+  <!-- Third Section with YouTube Video -->
+  <div class="section" style="background-color: blue;">
+    <h2>Third Section</h2>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

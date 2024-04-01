@@ -1,2 +1,71 @@
 <!-- Develop a recipe website using HTML and  Bootstrap that includes nevigationbar with a homepage,show the list of recipe.
 when you click on recipe list the perticular recipe image will open  with its description. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Website</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Recipe Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#recipe-list">Recipe List</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Recipe List Section -->
+<section id="recipe-list" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Recipe List</h2>
+    <div class="row">
+      <!-- Recipe Cards -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="recipe1.jpg" class="card-img-top" alt="Recipe 1">
+          <div class="card-body">
+            <h5 class="card-title">Recipe 1</h5>
+            <p class="card-text">Description of Recipe 1.</p>
+            <a href="#" class="btn btn-primary">View Recipe</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="recipe2.jpg" class="card-img-top" alt="Recipe 2">
+          <div class="card-body">
+            <h5 class="card-title">Recipe 2</h5>
+            <p class="card-text">Description of Recipe 2.</p>
+            <a href="#" class="btn btn-primary">View Recipe</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more recipe cards here -->
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript for Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

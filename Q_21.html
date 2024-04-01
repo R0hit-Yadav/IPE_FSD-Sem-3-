@@ -3,3 +3,203 @@ Web page is having fixed Navigation Bar having Logo (Image), Home, New Arrivals,
 which shows an additional icon, if width of device goes less than 992px and navigation items should disappear. Make a responsive webpage. 
 Also put validations in Sign-up form for Username that doesn’t includes any digits & special character, contact number having 10 digits only & 
 E-mail Id that accept only valid e-mail ids. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Store</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigation Bar styling */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 50px;
+}
+
+nav ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul.menu li {
+  margin: 0 10px;
+}
+
+nav ul.menu li.toggle {
+  display: none;
+}
+
+/* Slideshow styling */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Sign Up Form styling */
+.signup-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.signup-form form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.signup-form .form-group {
+  margin-bottom: 20px;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 992px) {
+  nav ul.menu li:not(:first-child) {
+    display: none;
+  }
+
+  nav ul.menu li.toggle {
+    display: block;
+  }
+
+  nav ul.menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+  }
+
+  nav ul.menu.active li {
+    margin: 5px;
+  }
+}
+
+</style>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <div class="container">
+    <a href="#" class="logo"><img src="logo.png" alt="Book Store"></a>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#">Fiction</a></li>
+      <li><a href="#">Non-Fiction</a></li>
+      <li><a href="#">Best Sellers</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Sign In</a></li>
+      <li class="toggle"><a href="#"><img src="menu-icon.png" alt="Menu"></a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Sliding Pictures for Advertisement -->
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="slide1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="slide2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="slide3.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="slide4.jpg" style="width:100%">
+  </div>
+</div>
+
+<!-- Sign Up Form -->
+<section class="signup-form">
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" pattern="[a-zA-Z]+" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+<!-- JavaScript for Slideshow -->
+<script src="script.js"></script>
+
+</body>
+</html>

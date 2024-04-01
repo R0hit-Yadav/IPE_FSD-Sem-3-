@@ -1,2 +1,171 @@
 <!-- Create a registration form that validates user inputs such as name, email, phone number, password, and confirms password. 
 You can use regular expressions to validate the inputs and display error messages if the user inputs are not valid. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+</style>
+<body>
+
+<div class="container">
+  <h2>Registration Form</h2>
+  <form id="registrationForm" action="#" method="post">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <span id="nameError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span id="emailError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+      <span id="phoneError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <span id="passwordError" class="error"></span>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <span id="confirmPasswordError" class="error"></span>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+<script>
+    const form = document.getElementById('registrationForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const phoneInput = document.getElementById('phone');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirmPassword');
+const nameError = document.getElementById('nameError');
+const emailError = document.getElementById('emailError');
+const phoneError = document.getElementById('phoneError');
+const passwordError = document.getElementById('passwordError');
+const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+form.addEventListener('submit', function(event) {
+  let isValid = true;
+  clearErrors();
+
+  if (!isValidName(nameInput.value)) {
+    nameError.textContent = 'Please enter a valid name.';
+    isValid = false;
+  }
+
+  if (!isValidEmail(emailInput.value)) {
+    emailError.textContent = 'Please enter a valid email address.';
+    isValid = false;
+  }
+
+  if (!isValidPhoneNumber(phoneInput.value)) {
+    phoneError.textContent = 'Please enter a valid phone number.';
+    isValid = false;
+  }
+
+  if (!isValidPassword(passwordInput.value)) {
+    passwordError.textContent = 'Please enter a valid password (at least 8 characters long).';
+    isValid = false;
+  }
+
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    confirmPasswordError.textContent = 'Passwords do not match.';
+    isValid = false;
+  }
+
+  if (!isValid) {
+    event.preventDefault(); // Prevent form submission if validation fails
+  }
+});
+
+function clearErrors() {
+  nameError.textContent = '';
+  emailError.textContent = '';
+  phoneError.textContent = '';
+  passwordError.textContent = '';
+  confirmPasswordError.textContent = '';
+}
+
+function isValidName(name) {
+  return /^[a-zA-Z\s]+$/.test(name);
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function isValidPhoneNumber(phone) {
+  return /^\d{10}$/.test(phone);
+}
+
+function isValidPassword(password) {
+  return password.length >= 8;
+}
+
+</script>
+</body>
+</html>

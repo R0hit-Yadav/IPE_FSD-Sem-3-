@@ -1,2 +1,181 @@
 <!-- Create a personal portfolio website to showcase your skills, projects, and achievements. You can include features like a homepage, about section, 
 project gallery, and contact form using css and HTML. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    /* General styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigation Bar styling */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul.menu li {
+  margin: 0 10px;
+}
+
+nav ul.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Sections styling */
+.section {
+  padding: 50px 0;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+/* Contact Form styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+</style>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <div class="container">
+    <h1 class="logo">My Portfolio</h1>
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="section">
+  <div class="container">
+    <h2>Welcome to My Portfolio</h2>
+    <p>Hi there! I'm excited to showcase my skills and projects.</p>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>I am a passionate developer with expertise in web development.</p>
+    <p>Skills: HTML, CSS, JavaScript, React, Node.js, etc.</p>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="project-gallery">
+      <!-- Add project cards here -->
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

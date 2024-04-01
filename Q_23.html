@@ -7,3 +7,76 @@
 • If mouse left button pressed on browser it displayed alert message as “You have clicked Left Button”, 
 if mouse centre button pressed on browser it displayed alert message as “You have clicked centre Button” & if mouse right 
 button pressed on browser it displayed alert message as “You have clicked Right Button”. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouse Events</title>
+</head>
+<body>
+
+<h1 id="heading">Heading</h1>
+<button id="red">Red</button>
+<button id="blue">Blue</button>
+<button id="upper">Upper</button>
+<button id="lower">Lower</button>
+<button id="dateTime">Date & Time</button>
+
+<script>
+document.getElementById('heading').addEventListener('click', function() {
+  this.style.fontStyle = 'italic';
+  this.style.border = 'solid 5px black';
+  this.style.fontSize = '50px';
+  this.textContent = 'Full Stack Development - 1';
+});
+
+document.getElementById('heading').addEventListener('mouseover', function() {
+  this.style.color = 'green';
+});
+
+document.getElementById('heading').addEventListener('mouseout', function() {
+  this.style.color = 'orange';
+});
+
+document.getElementById('red').addEventListener('click', function() {
+  document.getElementById('heading').style.color = 'red';
+});
+
+document.getElementById('blue').addEventListener('click', function() {
+  document.getElementById('heading').style.color = 'blue';
+});
+
+document.getElementById('upper').addEventListener('click', function() {
+  document.getElementById('heading').textContent = document.getElementById('heading').textContent.toUpperCase();
+});
+
+document.getElementById('lower').addEventListener('click', function() {
+  document.getElementById('heading').textContent = document.getElementById('heading').textContent.toLowerCase();
+});
+
+document.getElementById('dateTime').addEventListener('click', function() {
+  var now = new Date();
+  alert('Date & Time: ' + now.toLocaleString());
+});
+
+document.addEventListener('mousedown', function(event) {
+  switch(event.button) {
+    case 0:
+      alert('You have clicked Left Button');
+      break;
+    case 1:
+      alert('You have clicked Centre Button');
+      break;
+    case 2:
+      alert('You have clicked Right Button');
+      break;
+    default:
+      break;
+  }
+});
+</script>
+
+</body>
+</html>
